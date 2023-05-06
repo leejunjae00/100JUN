@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int n, m;
+    int a[100][100], b[100][100], c[100][100];
+    int i, j;
+    
+    // 행렬의 크기를 입력 받음
+    scanf("%d %d", &n, &m);
+    
+    // 두 행렬 A와 B를 입력 받음
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+    
+    // 두 행렬 A와 B를 더한 결과를 행렬 C에 저장함
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            c[i][j] = a[i][j] + b[i][j];
+        }
+    }
+    
+    // 행렬 C를 출력함
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            printf("%d ", c[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
