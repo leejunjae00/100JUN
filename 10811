@@ -1,0 +1,32 @@
+#ifndef _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
+#include <cstdio>
+
+const int LM = 101;
+int arr[LM];
+
+int main() {
+#ifdef _WIN32
+	freopen("input.txt", "r", stdin);
+#endif // _WIN32
+	int n, m, k;
+	scanf("%d %d", &n, &m);
+
+	for (k = 1; k <= n; ++k) arr[k] = k;
+	
+	int i, j, tmp;
+	while (m--) {
+		scanf("%d %d", &i, &j);
+		while (i < j) {
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			++i, --j;
+		}
+	}
+
+	for (k = 1; k <= n; ++k) printf("%d ", arr[k]);
+	return 0;
+}
